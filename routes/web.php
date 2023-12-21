@@ -12,7 +12,7 @@ use App\http\Controllers\SpecialPackagesController;
 use App\http\Controllers\SpecialOfferBuyController;
 use App\http\Controllers\ClientDashboardController;
 
-
+use App\http\Controllers\admin\CreateOfferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +33,9 @@ Route::get('/Recharge', [MobileRechargeController::class, "recharge"])->name('mo
 Route::get('/History', [HistoryController::class, "All_history"])->name('history_page');
 Route::get('/Offer', [SpecialPackagesController::class, "special_offer"])->name('special_package_page');
 Route::get('/Buying-Offer', [SpecialOfferBuyController::class, "OfferPurchase"])->name('offer_buy_form');
+
+Route::get('/Offer-Create', [CreateOfferController::class, "create_offers"])->name('createOffers');
+Route::post('/Offer-add', [CreateOfferController::class, "add_offers"])->name('addOffers');
 
 // Client Login Routes ------------->
 
