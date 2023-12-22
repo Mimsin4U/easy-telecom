@@ -27,12 +27,10 @@ use App\http\Controllers\admin\CreateOfferController;
 
 
 Route::get('/', [HomeController::class, "index"])->name('home');
-Route::get('/AddMoney', [AddMoneyController::class, "addMoney"])->name('add_money_form');
-Route::get('/About', [AboutController::class, "about"])->name('about_page');
-Route::get('/Recharge', [MobileRechargeController::class, "recharge"])->name('mobile_recharge_form');
-Route::get('/History', [HistoryController::class, "All_history"])->name('history_page');
+
 Route::get('/Offer', [SpecialPackagesController::class, "special_offer"])->name('special_package_page');
 Route::get('/Buying-Offer', [SpecialOfferBuyController::class, "OfferPurchase"])->name('offer_buy_form');
+Route::get('/About', [AboutController::class, "about"])->name('about_page');
 
 Route::get('/Offer-Create', [CreateOfferController::class, "create_offers"])->name('createOffers');
 Route::post('/Offer-add', [CreateOfferController::class, "add_offers"])->name('addOffers');
@@ -45,9 +43,17 @@ Route::post('client/login', [ClientAuthController::class, "clientLogin"])->name(
 Route::post('client/register', [ClientAuthController::class, "create"])->name('client.create');
 
 Route::middleware(['client'])->prefix('client')->name('client.')->group(function () {
-    Route::get('logout', [ClientAuthController::class, 'clientLogout'])->name('logout');
     
-    Route::get('dashboard', [ClientDashboardController::class, 'index'])->name('dashboard');
+    // Route::get('dashboard', [ClientDashboardController::class, 'index'])->name('dashboard');
+
+
+    Route::get('logout', [ClientAuthController::class, 'clientLogout'])->name('logout');
+
+    Route::get('/AddMoneyFrrm', [AddMoneyController::class, "addMoneyForm"])->name('add_money_form');
+    Route::post('/AddMoneyRequest', [AddMoneyController::class, "AddMoneyRequest"])->name('addMoneyRequest');
+    
+    Route::get('/Recharge', [MobileRechargeController::class, "recharge"])->name('mobile_recharge_form');
+    Route::get('/History', [HistoryController::class, "All_history"])->name('history_page');
 
 });
 

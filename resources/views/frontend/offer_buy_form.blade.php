@@ -1,11 +1,11 @@
 @extends('frontend.master')
 
 @section('content')
-
 <div class="container">
   <div class="first">
     <h1>Make a Purchase</h1>
-    <form action="#" class="purchase-form">
+    <form action="#" class="purchase-form" method="POST">
+      @csrf
       <div class="form-group">
         <label for="phoneNumber">Phone Number:</label>
         <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>

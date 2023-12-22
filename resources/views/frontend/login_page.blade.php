@@ -4,7 +4,6 @@
 
 <div class="container">
     <div class="first">
-    @include('notify')
     @if ($errors->any())
     <div class="alert alert-danger">
       <ul>

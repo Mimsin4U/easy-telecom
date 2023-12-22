@@ -48,7 +48,7 @@ class ClientAuthController extends Controller
         ]);
 
         if (Auth::guard('client')->attempt($request->only('email', 'password'))) {
-            return to_route('client.dashboard');
+            return to_route('home');
         }
 
         return redirect()->back()->with('error', 'Invalid, Please Create An Account and Try Again!');
