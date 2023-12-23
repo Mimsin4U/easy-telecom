@@ -69,4 +69,6 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [AdminController::class, "admin"])->name('dashboard');
+    Route::get('/add-money-request', [AdminController::class, "addMoneyRequestPage"])->name('addMoneyRequest');
+    Route::get('/approveAddMoney/{id}', [AdminController::class, "approveAddMoney"])->name('approveAddMoney');
 });

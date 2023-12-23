@@ -25,7 +25,7 @@
       </div>
       <div class="form-group">
         <label for="senderNumber">Give Sender Number:</label>
-        <input type="text" id="senderNumber" name="senderNumber" placeholder="Enter sender number" required min="1">
+        <input type="text" id="senderNumber" name="sent_from" placeholder="Enter sender number" required min="1">
       </div>
 
       <div class="form-group">

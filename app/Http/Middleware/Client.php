@@ -19,6 +19,6 @@ class Client
         if (Auth::guard('client')->check()) {
             return $next($request);
         }
-        return redirect()->intended();
+        return redirect()->intended()->with('error','Please Login First !');
     }
 }

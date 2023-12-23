@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id');
             $table->string('payment_method');
+            $table->string('sent_from');
             $table->float('amount', 10, 2);
             $table->string('transaction_id');
             $table->tinyInteger('status')->default(0)->comment('0=Pending,1=Added,2=Failed');

@@ -58,7 +58,7 @@
                             <li class="dropdown dropdown-small">
                                 <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key"><i class="fa fa-user"></i> {{Auth::guard('client')->user()->name ?? ''}}</span><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <form action="{{route('client.logout')}}" class="mr-3">
+                                    <form action="{{route('client.logout')}}" class="mr-3" method="POST">
                                         @csrf
                                         <input class="" style="background:red" type="submit" value="Logout">
                                     </form>
