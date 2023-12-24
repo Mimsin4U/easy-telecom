@@ -73,17 +73,18 @@
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('addMoneyRequest')}}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Add Money Requests</span></a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('rechargeRequestPage')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Recharge Requests</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
-
             <!-- Heading -->
             <div class="sidebar-heading">
                 Addons

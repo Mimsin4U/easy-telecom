@@ -6,7 +6,7 @@ use App\http\Controllers\HomeController;
 use App\http\Controllers\AddMoneyController;
 use App\http\Controllers\AboutController;
 use App\Http\Controllers\ClientAuthController;
-use App\http\Controllers\MobileRechargeController;
+use App\http\Controllers\RechargeController;
 use App\http\Controllers\HistoryController;
 use App\http\Controllers\SpecialPackagesController;
 use App\http\Controllers\SpecialOfferBuyController;
@@ -27,6 +27,18 @@ use App\http\Controllers\admin\CreateOfferController;
 
 
 Route::get('/', [HomeController::class, "index"])->name('home');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', [AdminController::class, "admin"])->name('dashboard');
+    Route::get('/add-money-request', [AdminController::class, "addMoneyRequestPage"])->name('addMoneyRequest');
+    Route::get('/approveAddMoney/{id}', [AdminController::class, "approveAddMoney"])->name('approveAddMoney');
+    Route::get('/recharge-request', [RechargeController::class, "rechargeRequestPage"])->name('rechargeRequestPage');
+    Route::get('/approve-recharge-request/{id}', [RechargeController::class, "approveRecharge"])->name('approveRecharge');
+});
 
 Route::get('/Offer', [SpecialPackagesController::class, "special_offer"])->name('special_package_page');
 Route::get('/Buying-Offer', [SpecialOfferBuyController::class, "OfferPurchase"])->name('offer_buy_form');
@@ -52,8 +64,9 @@ Route::middleware(['client'])->prefix('client')->name('client.')->group(function
     Route::get('/AddMoneyFrrm', [AddMoneyController::class, "addMoneyForm"])->name('add_money_form');
     Route::post('/AddMoneyRequest', [AddMoneyController::class, "AddMoneyRequest"])->name('addMoneyRequest');
     
-    Route::get('/Recharge', [MobileRechargeController::class, "recharge"])->name('mobile_recharge_form');
-    Route::post('/Recharge', [MobileRechargeController::class, "mobileRecharge"])->name('mobileRecharge');
+    Route::get('/Recharge', [RechargeController::class, "recharge"])->name('mobile_recharge_form');
+    Route::post('/Recharge', [RechargeController::class, "mobileRecharge"])->name('mobileRecharge');
+
     Route::get('/History', [HistoryController::class, "All_history"])->name('history_page');
 
 });
@@ -64,12 +77,3 @@ Route::middleware(['client'])->prefix('client')->name('client.')->group(function
 
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', [AdminController::class, "admin"])->name('dashboard');
-    Route::get('/add-money-request', [AdminController::class, "addMoneyRequestPage"])->name('addMoneyRequest');
-    Route::get('/approveAddMoney/{id}', [AdminController::class, "approveAddMoney"])->name('approveAddMoney');
-});

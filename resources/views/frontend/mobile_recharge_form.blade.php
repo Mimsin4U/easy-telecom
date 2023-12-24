@@ -27,12 +27,10 @@
                     <label for="amount">Amount:</label>
                     <input type="number" id="amount" name="amount" placeholder="Enter amount" required min="1">
                 </div>
-
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Enter password" required>
                 </div>
-
                 <button type="submit" class="btn">Recharge</button>
             </form>
         </div>
