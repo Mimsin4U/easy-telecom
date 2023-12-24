@@ -20,7 +20,7 @@
 
                 <div class="form-group">
                     <label for="phoneNumber">Mobile Number:</label>
-                    <input type="text" id="mobile_no" name="phoneNumber" placeholder="Enter phone number" required min="1">
+                    <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter phone number" required min="1">
                 </div>
 
                 <div class="form-group">

@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Recharges extends Model
+class Recharge extends Model
 {
     use HasFactory;
+
+    function client(){
+        return $this->belongsTo(Client::class);
+    }
 }

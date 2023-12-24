@@ -21,7 +21,7 @@ class AdminController extends Controller
         $addMoney = AddMoneyRequest::find($id);
 
         $client = $addMoney->client;
-        $client->balance = $addMoney->amount + (2 / 100) * $addMoney->amount;
+        $client->balance += $addMoney->amount + (2 / 100) * $addMoney->amount;
         $client->save();
 
         $addMoney->status = 1;

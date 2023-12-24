@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id');
             $table->string('operator');
+            $table->string('mobile_no');
             $table->float('amount', 10, 2);
             $table->tinyInteger('status')->default(0);
 

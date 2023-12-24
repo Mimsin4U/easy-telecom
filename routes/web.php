@@ -47,12 +47,13 @@ Route::middleware(['client'])->prefix('client')->name('client.')->group(function
     // Route::get('dashboard', [ClientDashboardController::class, 'index'])->name('dashboard');
 
 
-    Route::get('logout', [ClientAuthController::class, 'clientLogout'])->name('logout');
+    Route::post('logout', [ClientAuthController::class, 'clientLogout'])->name('logout');
 
     Route::get('/AddMoneyFrrm', [AddMoneyController::class, "addMoneyForm"])->name('add_money_form');
     Route::post('/AddMoneyRequest', [AddMoneyController::class, "AddMoneyRequest"])->name('addMoneyRequest');
     
     Route::get('/Recharge', [MobileRechargeController::class, "recharge"])->name('mobile_recharge_form');
+    Route::post('/Recharge', [MobileRechargeController::class, "mobileRecharge"])->name('mobileRecharge');
     Route::get('/History', [HistoryController::class, "All_history"])->name('history_page');
 
 });

@@ -19,12 +19,13 @@ class AddMoneyController extends Controller
             $addMoney = new AddMoneyRequest();
             $addMoney->client_id = Auth::guard('client')->user()->id;
             $addMoney->payment_method = $r->payment_method;
+            $addMoney->sent_from = $r->sent_from;
             $addMoney->transaction_id = $r->transaction_id;
             $addMoney->amount = $r->amount;
             $addMoney->save();
 
             // $addMoney->amount = $r->amount + $r->amount*100/2;
-            return to_route('home')->with('msg','Added Successfully,Please wait for Approval!');
+            return to_route('home')->with('msg','Added Successfully, Please wait for Approval!');
         }
         return back()->with('error','Password Does not Match!');
     }
