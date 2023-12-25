@@ -16,7 +16,7 @@ class RechargeController extends Controller
         $user = Auth::guard('client')->user();
         if (Hash::check($r->password, $user->password)) {
             if ($user->balance < $r->amount) {
-                return back()->with('error', 'Insufficient, Please Cheack Your Current Banance!');
+                return back()->with('error', 'Insufficient, Please Cheack Your Current Balance!');
             }
             $recharge = new Recharge();
             $recharge->client_id = Auth::guard('client')->user()->id;

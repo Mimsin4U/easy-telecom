@@ -8,10 +8,7 @@ use App\http\Controllers\AboutController;
 use App\Http\Controllers\ClientAuthController;
 use App\http\Controllers\RechargeController;
 use App\http\Controllers\HistoryController;
-use App\http\Controllers\SpecialPackagesController;
-use App\http\Controllers\SpecialOfferBuyController;
-use App\http\Controllers\ClientDashboardController;
-
+use App\http\Controllers\OfferController;
 use App\http\Controllers\admin\CreateOfferController;
 
 /*
@@ -27,6 +24,8 @@ use App\http\Controllers\admin\CreateOfferController;
 
 
 Route::get('/', [HomeController::class, "index"])->name('home');
+Route::get('/Offers', [OfferController::class, "clientOffers"])->name('clientOffers');
+Route::get('/About', [AboutController::class, "about"])->name('about_page');
 
 Route::middleware([
     'auth:sanctum',
@@ -34,18 +33,21 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [AdminController::class, "admin"])->name('dashboard');
+
+    Route::get('/Offer-Create', [CreateOfferController::class, "create_offers"])->name('createOffers');
+    Route::post('/Offer-add', [CreateOfferController::class, "add_offers"])->name('addOffers');
+
     Route::get('/add-money-request', [AdminController::class, "addMoneyRequestPage"])->name('addMoneyRequest');
     Route::get('/approveAddMoney/{id}', [AdminController::class, "approveAddMoney"])->name('approveAddMoney');
+
     Route::get('/recharge-request', [RechargeController::class, "rechargeRequestPage"])->name('rechargeRequestPage');
     Route::get('/approve-recharge-request/{id}', [RechargeController::class, "approveRecharge"])->name('approveRecharge');
+
+    Route::get('/offer-request', [OfferController::class, "offerRequestPage"])->name('offerRequestPage');
+    Route::get('/approve-offer-request/{id}', [OfferController::class, "approveOfferRequest"])->name('approveOfferRequest');
+
 });
 
-Route::get('/Offer', [SpecialPackagesController::class, "special_offer"])->name('special_package_page');
-Route::get('/Buying-Offer', [SpecialOfferBuyController::class, "OfferPurchase"])->name('offer_buy_form');
-Route::get('/About', [AboutController::class, "about"])->name('about_page');
-
-Route::get('/Offer-Create', [CreateOfferController::class, "create_offers"])->name('createOffers');
-Route::post('/Offer-add', [CreateOfferController::class, "add_offers"])->name('addOffers');
 
 // Client Login Routes ------------->
 
@@ -58,7 +60,6 @@ Route::middleware(['client'])->prefix('client')->name('client.')->group(function
     
     // Route::get('dashboard', [ClientDashboardController::class, 'index'])->name('dashboard');
 
-
     Route::post('logout', [ClientAuthController::class, 'clientLogout'])->name('logout');
 
     Route::get('/AddMoneyFrrm', [AddMoneyController::class, "addMoneyForm"])->name('add_money_form');
@@ -66,6 +67,9 @@ Route::middleware(['client'])->prefix('client')->name('client.')->group(function
     
     Route::get('/Recharge', [RechargeController::class, "recharge"])->name('mobile_recharge_form');
     Route::post('/Recharge', [RechargeController::class, "mobileRecharge"])->name('mobileRecharge');
+
+    Route::get('/buy-offer/{id}', [OfferController::class, "offerBuyForm"])->name('offerBuyForm');
+    Route::post('/perchaseOffer', [OfferController::class, "perchaseOffer"])->name('perchaseOffer');
 
     Route::get('/History', [HistoryController::class, "All_history"])->name('history_page');
 

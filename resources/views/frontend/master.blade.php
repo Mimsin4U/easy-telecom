@@ -102,7 +102,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="./">Home</a></li>
-                        <li><a href="{{route('special_package_page')}}">Special Packages</a></li>
+                        <li><a href="{{route('clientOffers')}}">Special Offers</a></li>
                         <li><a href="{{route('about_page')}}">About</a></li>
                         <li><a href="{{route('client.add_money_form')}}">Add Money</a></li>
                         <li><a href="{{route('client.mobile_recharge_form')}}">Mobile Recharge</a></li>

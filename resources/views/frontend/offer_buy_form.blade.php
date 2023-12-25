@@ -4,16 +4,13 @@
 <div class="container">
   <div class="first">
     <h1>Make a Purchase</h1>
-    <form action="#" class="purchase-form" method="POST">
+    <h3>{{$offer->title}}</h3>
+    <form action="{{route('client.perchaseOffer')}}" class="purchase-form" method="POST">
       @csrf
+      <input type="hidden" name="offer_id" value="{{$offer->id}}">
       <div class="form-group">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
-      </div>
-
-      <div class="form-group">
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+        <label for="phoneNumber">Mobile Number:</label>
+        <input type="tel" id="phoneNumber" name="mobile_no" placeholder="Enter phone number" required>
       </div>
 
       <div class="form-group">

@@ -30,6 +30,6 @@ class CreateOfferController extends Controller
 
         $offer->save(); 
 
-        return back()->with('notification', 'Offer Added Successfully');
+        return back()->with('msg', 'Offer Added Successfully');
     }
 }
