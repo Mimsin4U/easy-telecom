@@ -69,7 +69,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{route('createOffers')}}">Add Offer</a>
-                        <a class="collapse-item" href="cards.html">Manage Offers</a>
+                        <a class="collapse-item" href="{{route('manageOffers')}}">Manage Offers</a>
                     </div>
                 </div>
             </li>

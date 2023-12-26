@@ -35,6 +35,9 @@ Route::middleware([
     Route::get('/dashboard', [AdminController::class, "admin"])->name('dashboard');
 
     Route::get('/Offer-Create', [CreateOfferController::class, "create_offers"])->name('createOffers');
+    Route::get('/manage-offers', [CreateOfferController::class, "index"])->name('manageOffers');
+    Route::get('/change-offer-status/{id}', [CreateOfferController::class, "changeOfferStatus"])->name('changeOfferStatus');
+    Route::get('/delete-offer/{id}', [CreateOfferController::class, "deleteOffer"])->name('deleteOffer');
     Route::post('/Offer-add', [CreateOfferController::class, "add_offers"])->name('addOffers');
 
     Route::get('/add-money-request', [AdminController::class, "addMoneyRequestPage"])->name('addMoneyRequest');

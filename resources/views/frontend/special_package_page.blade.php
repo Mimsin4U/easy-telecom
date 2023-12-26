@@ -6,6 +6,9 @@
         <div class="container">
             <div class="row">
                 <h2 class="section-title">All Offers</h2>
+                @if($offers->count() <= 0)
+                    <h1 class="text-center mt-5 text-danger">Sorry,No Offer Available Please Try Later..!</h1>
+                @endif
                 <div class="col-md-12">
                     <div class="latest-product">
                         <div class="product-carousel">

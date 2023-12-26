@@ -12,7 +12,7 @@ class OfferController extends Controller
 {
     function clientOffers()
     {
-        return view('frontend.special_package_page', ['offers' => Offer::all()]);
+        return view('frontend.special_package_page', ['offers' => Offer::where('status',1)->get()]);
     }
 
     function offerBuyForm($id){
