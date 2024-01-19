@@ -1124,25 +1124,25 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 
 
-.first {
+.fff{
     text-align: center;
-    background-color:#94bbe9;
+    background-color: #7C3286;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .add-money-form {
+.add-money-form {
     max-width: 400px;
     margin: 0 auto;
   }
   
-  .login-form {
+.login-form {
     max-width: 400px;
     margin: 0 auto;
   }
   
-  .purchase-form {
+.purchase-form {
     max-width: 400px;
     margin: 0 auto;
   }
@@ -1205,5 +1205,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   .btn:hover {
     background-color: #0056b3;
   }
+  
   
   

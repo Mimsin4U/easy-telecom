@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <div class="first">
+  <div class="fff">
     <h1>Make a Purchase</h1>
     <h3>{{$offer->title}}</h3>
     <form action="{{route('client.perchaseOffer')}}" class="purchase-form" method="POST">

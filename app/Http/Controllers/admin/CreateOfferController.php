@@ -31,7 +31,7 @@ class CreateOfferController extends Controller
         $offer = Offer::find($id);
         $pendingOfferRequests = OfferRequest::where('offer_id',$offer->id)->where('status',0)->get(['id']);
         if($pendingOfferRequests->count() > 0 ){
-            return back()->with('msg', 'Can not Delete,This Offer Has Some Pending  Request!');
+            return back()->with('error', 'Can not Delete,This Offer Has Some Pending  Request!');
         }
         $offerRequests = OfferRequest::where('offer_id',$offer->id)->get(['id']);
         OfferRequest::destroy($offerRequests->toArray());
@@ -47,7 +47,7 @@ class CreateOfferController extends Controller
         $imgName ='Offer-image'.time().'.'.$r->image->getClientOriginalExtension();
         $r->image->move(public_path(self::$path),$imgName);
         $offer = new Offer();
-        $offer->title           = $r->title;
+        $offer->title           = $r->ttlei;
         $offer->original_price  = $r->original_price;
         $offer->discount_price  = $r->discount_price;
         $offer->image           = self::$path.$imgName;

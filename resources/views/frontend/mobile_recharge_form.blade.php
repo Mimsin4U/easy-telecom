@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <div class="first">
-            <h1>Mobile Recharge</h1>
+        <div class="fff">
+            <h1><b>Mobile Recharge</b></h1>
             <form action="#" class="recharge-form" method="POST">
                 @csrf
                 <div class="form-group">

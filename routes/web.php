@@ -27,6 +27,8 @@ Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/Offers', [OfferController::class, "clientOffers"])->name('clientOffers');
 Route::get('/About', [AboutController::class, "about"])->name('about_page');
 
+// Admin Routes ------------->
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -65,7 +67,7 @@ Route::middleware(['client'])->prefix('client')->name('client.')->group(function
 
     Route::post('logout', [ClientAuthController::class, 'clientLogout'])->name('logout');
 
-    Route::get('/AddMoneyFrrm', [AddMoneyController::class, "addMoneyForm"])->name('add_money_form');
+    Route::get('/AddMoneyFrom', [AddMoneyController::class, "addMoneyForm"])->name('add_money_form');
     Route::post('/AddMoneyRequest', [AddMoneyController::class, "AddMoneyRequest"])->name('addMoneyRequest');
     
     Route::get('/Recharge', [RechargeController::class, "recharge"])->name('mobile_recharge_form');

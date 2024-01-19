@@ -1,3 +1,5 @@
+
+
 @extends('frontend.master')
 
 @section('content')
@@ -34,7 +36,7 @@
             </div>
         </div>
         <div style="padding-top: 25px">
-            <h2 class="text-center">My Rechargs</h2>
+            <h2 class="text-center">My Recharges</h2>
             <div class="container">
                 <div class="row ">
                     <div class="col-md-12">

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
+
 <html lang="en">
 
 <head>
@@ -26,6 +22,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('/')}}frontend/css/owl.carousel.css">
     <link rel="stylesheet" href="{{asset('/')}}frontend/style.css">
+    <link rel="stylesheet" href="{{asset('/')}}frontend/new.css">
+    <link rel="stylesheet" href="{{asset('/')}}frontend/aboutcss.css">
     <link rel="stylesheet" href="{{asset('/')}}frontend/css/responsive.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

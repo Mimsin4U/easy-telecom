@@ -5,7 +5,7 @@
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-                <h2 class="section-title">All Offers</h2>
+                <h2 class="section-title"><b>All Offers</b></h2>
                 @if($offers->count() <= 0)
                     <h1 class="text-center mt-5 text-danger">Sorry,No Offer Available Please Try Later..!</h1>
                 @endif
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                        </div> 
                     </div>
                 </div>
 

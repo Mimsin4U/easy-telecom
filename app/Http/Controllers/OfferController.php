@@ -30,7 +30,7 @@ class OfferController extends Controller
         $offer = Offer::find($r->offer_id);
         $user = Auth::guard('client')->user();
         if (Hash::check($r->password, $user->password)) {
-            if ($user->balance < $offer->amount) {
+            if ($user->balance < $offer->discount_price) {
                 return back()->with('error', 'Insufficient, Please Cheack Your Current Balance!');
             }
             $offerRequest = new OfferRequest();
